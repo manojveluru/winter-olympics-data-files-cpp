@@ -28,7 +28,7 @@ int Athelete :: get_next_by_country(void)
 }
 void Athelete :: print()
 {
-	cout<<lastname<<", "<<firstname<<endl;
+	cout<<lastname<<", "<<firstname<<" "<<get_country()<<" "<<get_next_by_name()<<" "<<get_next_by_country()<<endl;
 }
 
 char* Country :: get_country_code(void)
@@ -67,3 +67,10 @@ void Event :: print(vector<Athelete>&, vector<Country>&)
 	
 }
 
+/*int Sport :: select_sport(vector<Sport>$ sports, int value)
+{
+	for(int i=0;i<sports[i].size();i++)
+	{
+		
+	}
+}*/

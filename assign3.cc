@@ -5,7 +5,8 @@
 #include<cstdlib>
 #include<vector>
 #include<fstream>
-
+#include<cstring>
+using namespace std;
 void print_athletes_by_country(vector<Athelete>& , vector<Country>&);
 int main()
 {
@@ -54,10 +55,10 @@ int main()
 		atheletes.push_back(athelete);
 	}
 	/*for(unsigned int i=0;i<atheletes.size();i++){
-		//atheletes[i].print();
-		cout<<atheletes[i].get_next_by_country()<<endl;
-	 //get_next_by_name(void);
-	 //get_next_by_country(void);
+		atheletes[i].print();
+		//cout<<atheletes[i].get_next_by_country()<<endl;
+	//get_next_by_name(void);
+	//get_next_by_country(void);
 	}*/
 	inp.read((char*) &f, sizeof(f));
 	for(int i=0;i<f;i++)
@@ -76,36 +77,21 @@ void print_athletes_by_country(vector<Athelete>& atheletes, vector<Country>& cou
 {
 	cout<<endl;
 	int count=1;
-	/*for(int i=0;i<atheletes.size();i++)
-	{
-		cout<<atheletes[i].get_next_by_country()<<" "<<atheletes[i].get_lastname()<<" "<<atheletes[i].get_country()<<endl;
-	}*/
-	for(int i=0;i<atheletes.size();i++)
+	int x =  atheletes[0].get_next_by_country();
+	int i=0;
+	while(i<atheletes.size())
 	{
 		
 		
-		int n = atheletes[i].get_country();
-		count=1;
-		for(int j=atheletes.size()-1;j>i;j--)
-		{
-			int k = atheletes[j].get_country();
-			if( n == k){count++;}
+		int n = atheletes[x].get_country();
+		x = atheletes[x].get_next_by_country();
+		char* ccode = countries[n].get_country_code();
+		char* ath_lname=atheletes[x].get_lastname();
+		char* ath_fname = atheletes[x].get_firstname();
+		if (strlen(ccode)>0 && strlen(ath_lname)>0 && strlen(ath_fname)>0){
+			cout<<ccode<<" "<<ath_lname<<", "<<ath_fname<<endl;
 		}
-		
-		//cout<<countries[i].get_country_code()<<" "<<atheletes[i].get_country()<<endl;
-		/*int limit = atheletes.size() - 1;
-        while(i < limit  && atheletes[i].get_country() == atheletes[i+1].get_country())
-		{
-			count++;
-			i++;
-		}*/
-		
-		
-		
-		     
-			//cout<<n<<" "<<"count: "<<count<<endl;
-			cout<<atheletes[i].get_next_by_country()<<" "<<atheletes[i].get_country()<<" "<<atheletes[i].get_lastname()<<endl;
-		
+		i++;
 		
 	}
 	cout<<endl;
