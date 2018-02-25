@@ -8,6 +8,7 @@
 #include<cstring>
 using namespace std;
 void print_athletes_by_country(vector<Athelete>& , vector<Country>&);
+void print_athletes_by_name(vector<Athelete>& , vector<Country>& );
 int main()
 {
 	int c,d,e,f;
@@ -69,7 +70,8 @@ int main()
 	/*for(unsigned int i=0;i<events.size();i++){
 		cout<<events[i].get_index_of_next_event()<<endl;
 	}*/
-	print_athletes_by_country(atheletes, countries);
+	//print_athletes_by_country(atheletes, countries);
+	print_athletes_by_name(atheletes, countries);
 	return 0;
 }
 
@@ -79,10 +81,11 @@ void print_athletes_by_country(vector<Athelete>& atheletes, vector<Country>& cou
 	int count=1;
 	int x =  atheletes[0].get_next_by_country();
 	int i=0;
-	while(i<atheletes.size())
+	athSize =atheletes.size();
+	while(i<athSize)
 	{
 		
-		
+		if(x>athSize || x<0){break;}
 		int n = atheletes[x].get_country();
 		x = atheletes[x].get_next_by_country();
 		char* ccode = countries[n].get_country_code();
@@ -97,3 +100,27 @@ void print_athletes_by_country(vector<Athelete>& atheletes, vector<Country>& cou
 	cout<<endl;
 }
 
+void print_athletes_by_name(vector<Athelete>& atheletes, vector<Country>& countries)
+{
+	cout<<endl;
+	int count=1;
+	int x =  atheletes[0].get_next_by_name();
+	int i=0;
+	int athSize = atheletes.size();
+	while(i<athSize)
+	{
+		
+		if(x>athSize || x<0){break;}
+		int n = atheletes[x].get_country();
+		x = atheletes[x].get_next_by_name();
+		char* ccode = countries[n].get_country_code();
+		char* ath_lname=atheletes[x].get_lastname();
+		char* ath_fname = atheletes[x].get_firstname();
+		if (strlen(ccode)>0 && strlen(ath_lname)>0 && strlen(ath_fname)>0){
+			cout<<ath_lname<<", "<<ath_fname<<" "<<ccode<<endl;
+		}
+		i++;
+		
+	}
+	cout<<endl;
+}
