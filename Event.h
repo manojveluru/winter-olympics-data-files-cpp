@@ -1,6 +1,7 @@
 #ifndef EVENT_H
 #define EVENT_H
 #include<iostream>
+#include<vector>
 using namespace std;
 const int SCORE_SIZE = 25;
 const int ATHELETE_SIZE = 4;
@@ -15,6 +16,6 @@ class Event
 	
 public:
 	int get_index_of_next_event(void);
-	void print();
+	void print(vector<Athelete>&, vector<Country>&);
 };
 #endif

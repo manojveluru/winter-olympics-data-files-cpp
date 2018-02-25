@@ -1,6 +1,7 @@
 #ifndef COUNTRY_H
 #define COUNTRY_H
 #include<iostream>
+#include<vector>
 using namespace std;
 const int COUNTRY_CODE_SIZE = 4;
 const int COUNTRY_NAME_SIZE = 34;

@@ -1,6 +1,7 @@
 #ifndef SPORT_H
 #define SPORT_H
 #include<iostream>
+#include<vector>
 using namespace std;
 const int SPORT_NAME_SIZE = 60;
 class Sport

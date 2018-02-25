@@ -1,6 +1,7 @@
 #ifndef ATHELETE_H
 #define ATHELETE_H
 #include<iostream>
+#include<vector>
 using namespace std;
 const int NAME_SIZE = 30;
 class Athelete

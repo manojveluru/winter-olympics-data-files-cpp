@@ -28,7 +28,7 @@ int Athelete :: get_next_by_country(void)
 }
 void Athelete :: print()
 {
-	cout<<lastname<<", "<<firstname;
+	cout<<lastname<<", "<<firstname<<endl;
 }
 
 char* Country :: get_country_code(void)
@@ -41,7 +41,7 @@ char* Country :: get_country_fullname(void)
 }
 void Country :: print()
 {
-	cout<<get_country_code()<<" "<<get_country_fullname;
+	cout<<get_country_code()<<" "<<get_country_fullname()<<endl;
 }
 
 char* Sport :: get_sport_name(void)
@@ -54,10 +54,16 @@ int Sport :: get_index_of_an_event(void)
 }
 void Sport :: print()
 {
-	cout<<sport_name;
+	cout<<sport_name<<endl;
 }
 
 int Event :: get_index_of_next_event(void)
 {
 	return index_of_next_event;
 }
+
+void Event :: print(vector<Athelete>&, vector<Country>&)
+{
+	
+}
+
