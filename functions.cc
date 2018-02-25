@@ -87,13 +87,15 @@ int select_sport(vector<Sport>& sports, int value)
 		j++;
 	}
 	while(1){
-		cout<<"Enter Your Choice: ";
+		cout<<"Select Sport: ";
 		cin>>choice;
 		if(choice <= j && choice >0)
 		{	
 			return choice;
 		}
 		cout<<"Invalid choice"<<endl;
+		cin.clear();
+		cin.ignore(10000, '\n');
 	}
 	
 }
