@@ -4,17 +4,18 @@
 #include<vector>
 using namespace std;
 const int SPORT_NAME_SIZE = 60;
+
 class Sport
 {
-	char sport_name[SPORT_NAME_SIZE]="CRICKET";
+	char sport_name[SPORT_NAME_SIZE];
 	int index_of_an_event;
 	
 public:
 	char* get_sport_name(void);
 	int get_index_of_an_event(void);
 	void print();
-	//int select_sport(vector<Sport>& , int);
 };
+int select_sport(vector<Sport>& , int);
 #endif
 
 

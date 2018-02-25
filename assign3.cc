@@ -9,6 +9,7 @@
 using namespace std;
 void print_athletes_by_country(vector<Athelete>& , vector<Country>&);
 void print_athletes_by_name(vector<Athelete>& , vector<Country>& );
+void print_ranking_by_sport(int , const vector<Sport>& , const vector<Event>& , const vector<Athelete>& , const vector<Country>& );
 int main()
 {
 	int c,d,e,f;
@@ -71,7 +72,9 @@ int main()
 		cout<<events[i].get_index_of_next_event()<<endl;
 	}*/
 	//print_athletes_by_country(atheletes, countries);
-	print_athletes_by_name(atheletes, countries);
+	//print_athletes_by_name(atheletes, countries);
+	int choice = select_sport(sports, sports.size());
+	print_ranking_by_sport(choice, sports, events, atheletes, countries);
 	return 0;
 }
 
@@ -81,7 +84,7 @@ void print_athletes_by_country(vector<Athelete>& atheletes, vector<Country>& cou
 	int count=1;
 	int x =  atheletes[0].get_next_by_country();
 	int i=0;
-	athSize =atheletes.size();
+	int athSize =atheletes.size();
 	while(i<athSize)
 	{
 		
@@ -123,4 +126,16 @@ void print_athletes_by_name(vector<Athelete>& atheletes, vector<Country>& countr
 		
 	}
 	cout<<endl;
+}
+
+void print_ranking_by_sport(int choice, const vector<Sport>& sports, const vector<Event>& events, const vector<Athelete>& atheletes, const vector<Country>& countries)
+{
+	Sport chosen_sport = sports[choice-1];
+	cout<<endl<<chosen_sport.get_sport_name()<<endl;
+	int event_index = chosen_sport.get_index_of_an_event();
+	while(event_index != -1){
+		Event current_event = events[event_index];
+		current_event.print(atheletes,countries);
+		event_index = current_event.get_index_of_next_event();
+	}
 }

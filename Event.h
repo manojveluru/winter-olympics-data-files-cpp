@@ -16,6 +16,6 @@ class Event
 	
 public:
 	int get_index_of_next_event(void);
-	void print(vector<Athelete>&, vector<Country>&);
+	void print(const vector<Athelete>&, const vector<Country>&);
 };
 #endif
