@@ -13,7 +13,7 @@ class Event
 	int numerical_ranking;
 	int index_of_next_event;
 	
-	public:
+public:
 	int get_index_of_next_event(void);
 	void print();
 };

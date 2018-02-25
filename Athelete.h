@@ -10,7 +10,7 @@ class Athelete
 	int country;
 	int next_by_name;
 	int next_by_country;
-	public:
+public:
 	//char* lastname = new char[value];
 	char* get_lastname(void);
 	char* get_firstname(void);

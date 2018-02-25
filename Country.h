@@ -8,7 +8,7 @@ class Country
 {
 	char country_code[COUNTRY_CODE_SIZE];
 	char country_fullname[COUNTRY_NAME_SIZE];
-	public:
+public:
 	char* get_country_code(void);
 	char* get_country_fullname(void);
 	void print();

@@ -8,7 +8,7 @@ class Sport
 	char sport_name[SPORT_NAME_SIZE]="CRICKET";
 	int index_of_an_event;
 	
-	public:
+public:
 	char* get_sport_name(void);
 	int get_index_of_an_event(void);
 	void print();
