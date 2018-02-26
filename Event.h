@@ -2,6 +2,7 @@
 #define EVENT_H
 #include<iostream>
 #include<vector>
+#include<iomanip>
 using namespace std;
 const int SCORE_SIZE = 25;
 const int ATHELETE_SIZE = 4;
